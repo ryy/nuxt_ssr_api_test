@@ -1,23 +1,28 @@
 <template>
   <div>
 
+  <br>
     <p>
       <a href="https://uncle-javascript.com/weird-nuxt-3-axios-data-fetch" target="_blank">@see ここが変だよ Nuxt.js: No.3 axions の設定、SSR のためのデータのフェッチ</a>
     </p>
 
     <br>
+    <hr>
+        <br>
+
     <pre>
       async asyncData({ $axios }) {
         const ip = await $axios.$get('http://icanhazip.com')
         return { ip }
       }
-    </pre>
-    <p>
+
       IP: {{ip}}
-    </p>
+    </pre>
+    <br>
 
     <hr>
 
+    <br>
     <pre>
       methods: {
         async fetchSomething() {
@@ -25,11 +30,10 @@
           this.ip2 = ip
         }
       }
-    </pre>
-    <p>
-      IP: {{ip2}}
-    </p>
 
+      IP2: {{ip2}}
+    </pre>
+    <hr>
   </div>
 </template>
 
@@ -49,7 +53,7 @@ export default {
     async fetchSomething() {
       const ip = await this.$axios.$get('http://icanhazip.com')
       this.ip2 = ip
-    }
+    },
   },
   created: function () {
     this.fetchSomething()
