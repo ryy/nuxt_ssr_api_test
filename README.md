@@ -1,0 +1,1 @@
+# nuxt_ssr_api_test
