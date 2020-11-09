@@ -13,7 +13,7 @@
     <pre>
       # asyncDataからIPを取得
       async asyncData({ $axios }) {
-        const ip = await $axios.$get('http://icanhazip.com')
+        const ip = await $axios.$get('http://icanhazip.com?AsyncData')
         return { ip }
       }
 
@@ -28,7 +28,7 @@
       # メソッドからIPを取得
       methods: {
         async fetchSomething() {
-          const ip = await this.$axios.$get('http://icanhazip.com')
+          const ip = await this.$axios.$get('http://icanhazip.com?Method')
           this.ip2 = ip
         }
       }
